@@ -29,7 +29,7 @@ class ImageGallery extends React.Component {
         if (this.state.page > prevState.page) {
             this.setState({ status: 'pending' })
             axios(`${url}?q=${this.props.search}&page=${this.state.page}&key=${API_KEY}${options}`).then(({ data }) => this.setState((prevState) => ({ searchResults: [...prevState.searchResults, ...data.hits], status: 'resolved' })))
-             
+
         }
         if (this.props.search !== prevProps.search) {
             this.setState({ searchResults: [], page: 1, })
@@ -41,21 +41,18 @@ class ImageGallery extends React.Component {
         top: document.body.scrollHeight,
         behavior: 'smooth'
         })
-        
-       
     }
 
 
     
 
     loadMore = () => {
-       
+    
         this.setState((prevState) => {
             return {
                 page: prevState.page + 1
             };
         });
-     
     };
 
     openModal = url => {
@@ -71,9 +68,9 @@ class ImageGallery extends React.Component {
     }
 
     render() {
-       return <>
+    return <>
             
-             <>
+            <>
                 <ul className={s.gallery}>
                     {this.state.searchResults.map(({ id, webformatURL, largeImageURL }) => {
                         return <li key={id} className={s.item}>
@@ -82,16 +79,15 @@ class ImageGallery extends React.Component {
                     })}
                 </ul>
                 {this.state.showModal && <Modal onCloseRequest={this.handleToggleModal}> <img src={this.state.modalUrl} alt="" /> </Modal>}
-           </>
-           {this.state.status === 'resolved' && this.state.page !== this.state.totalpages && <Button loadMore={this.loadMore} />}
-           {this.state.status === 'pending' && <Loader />}
+        </>
+        {this.state.status === 'resolved' && this.state.page !== this.state.totalpages && <Button loadMore={this.loadMore} />}
+        {this.state.status === 'pending' && <Loader />}
         </>
         
     }
 }
 ImageGallery.propTypes = {
     search: PropTypes.string.isRequired,
-
 } 
 
 
