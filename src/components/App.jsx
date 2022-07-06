@@ -8,10 +8,8 @@ class App extends React.Component{
     search: '',
 }
   onHandleSearch = search => {
-    this.setState({ search });
+    this.setState({ search }); 
 }
-
-
   render(){
     return (
     <div>

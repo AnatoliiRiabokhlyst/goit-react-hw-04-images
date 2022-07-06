@@ -1,15 +1,15 @@
 li {
-    list-style: none;
+  list-style: none;
 }
-.gallery{
-    padding-top: 20px;
-    padding-bottom: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap:20px;
-    max-width: 1300px;
-    margin: 0 auto;
+.gallery {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1300px;
+  margin: 0 auto;
 }
-.item{
-    width: calc( 100% / 4 - 20px);
+.item {
+  width: calc(100% / 4 - 20px);
 }
