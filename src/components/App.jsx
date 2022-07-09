@@ -1,23 +1,22 @@
-import React from "react";
+import {useState} from "react";
+import { ToastContainer} from 'react-toastify';
 import Searchbar from "./Searchbar";
-import ImageGallery from "./ImageGallery";
+import ImageGallery from "./Searchbar";
 
 
-class App extends React.Component{
-  state = {
-    search: '',
-}
-  onHandleSearch = search => {
-    this.setState({ search }); 
-}
-  render(){
-    return (
+function App() {
+  const [search, setSearch] = useState('')
+  const [page, setPage] = useState(1);
+  
+
+     return (
     <div>
-      <Searchbar onSearch={this.onHandleSearch} />
-      <ImageGallery search={this.state.search} />
+         <Searchbar onSearch={setSearch} changePage={setPage} />
+         <ImageGallery search={search} page={page} changePage={setPage} />
+         <ToastContainer autoClose={2000}/>
     </div>
   );
-  }
+  
 }
 
 
