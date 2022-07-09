@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { toast } from 'react-toastify';
 import { ImSearch } from 'react-icons/im';
+import { toast } from 'react-toastify';
 import s from './Searchbar.module.css';
 
 export default function Searchbar({ onSearch, changePage }) {
@@ -32,11 +32,12 @@ export default function Searchbar({ onSearch, changePage }) {
         <input
           className={s.SearchForm_input}
           type="text"
-          autocomplete="off"
-          autofocus
+          name="search"
+          autoComplete="off"
+          autoFocus
+          onChange={onChange}
+          value={search}
           placeholder="Search images and photos"
-          value={onChange}
-          onChange={search}
         />
       </form>
     </header>

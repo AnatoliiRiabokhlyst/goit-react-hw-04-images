@@ -1,7 +1,7 @@
 import {useState} from "react";
 import { ToastContainer} from 'react-toastify';
 import Searchbar from "./Searchbar";
-import ImageGallery from "./Searchbar";
+import ImageGallery from "./ImageGallery";
 
 
 function App() {
